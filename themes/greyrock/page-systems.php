@@ -25,7 +25,7 @@ get_header();
     
 
     <?php if ($prebanner_title || $prebanner_content || $prebanner_sublist) { ?>
-        <section class="section section-movable-systems">
+        <section class="section section-movable-systems" id="maincontent">
             <div class="container">
                 <?php
                     if ($prebanner_title) echo "<h2 class='section-title'>$prebanner_title</h2>";

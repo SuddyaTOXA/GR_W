@@ -49,6 +49,7 @@
         </div>
 
 
+        <? /*
         <?php if ( $boxes = get_field('boxes') ) : ?>
             <div class="gallery-thumbs">
                 <ul class="gallery-thumbs-list">
@@ -69,7 +70,50 @@
                 </ul>
             </div>
         <?php endif; ?>
+        */?>
 
     </section>
+
+    <?php if ( $boxes = get_field('boxes') ) : ?>
+        <section class="section section-watch-block">
+            <div class="container">
+                <ul class="watch-block-list">
+                     <?php foreach ($boxes as $box) { ?>
+                        <li>
+                            <div class="watch-block">
+                                <?php if ($box['title']) echo "<div class='watch-title-wrap'><h3 class='watch-block-title'>{$box['title']}</h3></div>"; ?>
+                                <span class='watch-block-bg' style="<?php if ($box['image']) echo "background-image:url({$box['image']});"; ?>"></span>
+                                <?php
+                                    if ($box['choose']) {
+                                        if ($box['button']) echo "<a href='{$box['video'][0]['webm']['url']}' class='btn popup-vimeo'>{$box['button']}</a>";
+                                    } else {
+                                        if ($box['button']) echo "<a href='{$box['link']}' class='btn'>{$box['button']}</a>";
+                                    }
+                                ?>
+                            </div>
+                        </li>
+                     <?php } ?>
+<!--                    <li>-->
+<!--                        <div class="watch-block">-->
+<!--                            <div class="watch-title-wrap">-->
+<!--                                <h3 class="watch-block-title">Direct Fuel Production™ - <br>How It Works</h3>-->
+<!--                            </div>-->
+<!--                            <span class="watch-block-bg" style="background-image: url(img/watch_bg_2.png)"></span>-->
+<!--                            <a  href="video/What_is_Greyrock_HD.webm" class="btn popup-vimeo">Watch Video</a>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <div class="watch-block">-->
+<!--                            <div class="watch-title-wrap">-->
+<!--                                <h3 class="watch-block-title">Local Midstream, Marketing and Sales Affiliate</h3>-->
+<!--                            </div>-->
+<!--                            <span class="watch-block-bg" style="background-image: url(img/watch_bg_3.png)"></span>-->
+<!--                            <a href="#" class="btn">Coming Soon</a>-->
+<!--                        </div>-->
+<!--                    </li>-->
+                </ul>
+            </div>
+        </section>
+    <?php endif; ?>
 
 <?php get_footer(); ?>
