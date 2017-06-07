@@ -1,0 +1,394 @@
+.section-runs-fuels {
+  padding-top: 80px;
+  padding-bottom: 76px;
+}
+  .desc-box {
+    max-width: 620px;
+    margin: 0 auto 65px;
+    .content {
+      * {
+        font-size: 1.125em;
+        color: #737c84;
+      }
+    }
+  }
+  .runs-list {
+    text-align: center;
+    > li {
+      position: relative;
+      z-index: 10;
+      display: inline-block;
+      width: 32%;
+      padding: 0 15px;
+      vertical-align: top;
+      &:after {
+        position: absolute;
+        z-index: 1;
+        content: '';
+        width: 100%;
+        height: 4px;
+        top: 97px;
+        left: 50%;
+        background-color: rgb(244, 244, 244);
+      }
+      &:last-child {
+        &:after {
+          content: none;
+        }
+      }
+    }
+  }
+      .runs-box {
+        max-width: 240px;
+        margin: 0 auto 0;
+      }
+        .runs-img-wrap {
+          overflow: hidden;
+          position: relative;
+          z-index: 10;
+          display: block;
+          width: 198px;
+          height: 198px;
+          margin: 0 auto 16px;
+          //border: 1px solid #F1F1F1;
+          @include border-radius(50%);
+          @include css3-prefix('box-shadow', '0 0 40px rgba(0, 0, 0, 0.1)');
+          img {
+            max-width: 100%;
+            max-height: 100%;
+          }
+        }
+        .runs-desc-box {
+          text-align: center;
+          .content {
+            * {
+              color: #737c84;
+            }
+          }
+        }
+
+.section-fuel-products {
+  padding-top: 96px;
+  padding-bottom: 108px;
+  background-position: left bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  .section-title {
+    margin-bottom: 88px;
+  }
+}
+  .fuel-products-list {
+    max-width: 1070px;
+    margin: 0 auto -25px;
+    > li {
+      display: inline-block;
+      width: 49%;
+      padding: 0 7px;
+      margin-bottom: 25px;
+      vertical-align: top;
+    }
+  }
+    .fuel-product-box {
+      overflow: hidden;
+      padding: 24px 20px 17px 20px;
+      background-color: #fff;
+      border: 1px solid #ECF0F3;
+      @include css3-prefix('box-shadow', '0 0 20px rgba(0, 0, 0, 0.05)');
+    }
+      .fuel-product-img-wrap {
+        float: left;
+        min-height: 105px;
+        margin-right: 19px;
+        line-height: 105px;
+        img {
+          max-width: 100%;
+          height: auto;
+          vertical-align: middle;
+        }
+      }
+    .fuel-product-desc-box {
+      .content {
+        overflow: hidden;
+        * {
+          font-family: $font-light;
+          font-weight: 300;
+          color: #737c84;
+        }
+        ul, ol {
+          li {
+            position: relative;
+            margin-bottom: 0;
+            list-style: none;
+            list-style-position: inside;
+            text-indent: 0px;
+            padding-left: 10px;
+            &:before {
+              position: absolute;
+              content: '';
+              width: 4px;
+              height: 4px;
+              background-color: #737c84;
+              left: 0;
+              top: 9px;
+              @include border-radius(50%);
+            }
+          }
+        }
+      }
+    }
+    .fuel-product-title {
+      margin-bottom: 8px;
+      font-family: $font-semibold;
+      font-size: 1.125em;
+      font-weight: 500;
+      color: #fb7e22;
+    }
+
+.section-fuel-process {
+  background: #f8f8f8;
+  padding-top: 96px;
+  padding-bottom: 108px;
+  overflow: hidden;
+
+  .section-title {
+    margin-bottom: 44px;
+  }
+
+  .complex-wrap,
+  .simple-wrap {
+      
+      @media(min-width: $screen-sm-min) {
+        display: inline-block;
+        width: $col *5;
+        vertical-align: middle;
+      }
+  }
+  .versus {
+    text-align: center;
+    
+    
+    margin-left: -8px;
+    margin-right: -8px;
+    
+
+    @media(min-width: $screen-sm-min) {
+      display: inline-block;
+      width: $col * 2;
+      vertical-align: middle;
+    }
+
+    span {
+      display: inline-block;
+      width: 82px;
+      height: 82px;
+      position: relative;
+      margin-top: 62px;
+      margin-bottom: 88px;
+      
+
+      &:before {
+        content: "";
+        position: absolute;
+        background-color: #cd6c25;
+        top: 0;
+        left:0;
+        width:100%;
+        height: 100%;
+        
+        @include border-radius(50%);
+      }
+      &:after {
+        content: "VS";
+        @include center-align-absolute;
+        color: white;
+        font-family: $font-bold;
+        font-size: 18px;
+      }
+    }
+  }
+}    
+
+$complexContainerWidth: 1144.33;
+$complexContainerHeight: 1162;
+
+//311.592
+@mixin revealPosition($top, $left, $width, $height, $containerWidth, $containerHeight) {
+    top: ($top - 0.5)  / $complexContainerHeight *100%;
+    left: $left / $complexContainerWidth *100%;
+    width: $width / $containerWidth *100%;
+    height: $height / $containerHeight *100%;
+}
+.complex {
+  position: relative;
+
+  .reveal {
+    position: absolute;
+    width: 10%;
+    height: 4%;
+    top: 0;
+    left: 0;
+    background: #f8f8f8;
+    // opacity: 0.8 !important;
+  }
+  .anime {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(51.533, 226.988, 169.208, 42.167, $complexContainerWidth, $complexContainerHeight );
+  }
+  .claus {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(99.288, 612.016,169.207, 41.954, $complexContainerWidth, $complexContainerHeight );
+  }
+  .gas {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(160.818, 93.687, 169.207, 41.954, $complexContainerWidth, $complexContainerHeight );
+  }
+  .metrox {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(160.818, 331.125, 169.206, 41.954, $complexContainerWidth, $complexContainerHeight );
+  }
+   .hydrotreater {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(245.168, 128.273, 133.828, 41.953, $complexContainerWidth, $complexContainerHeight );
+  }
+  .hydrotreater2 {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(320.638, 207.924, 133.827, 41.954, $complexContainerWidth, $complexContainerHeight );
+  }
+  .isometrization {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(237.555, 313.203, 125.69, 52.52, $complexContainerWidth, $complexContainerHeight );
+  }
+  .catalytic {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(313.025, 396.475, 125.69, 56.895, $complexContainerWidth, $complexContainerHeight );
+  }
+  .metrox2 {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(397.72, 128.753, 133.828, 41.954, $complexContainerWidth, $complexContainerHeight );
+  }
+  .hydrotreater3 {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(400.936, 438.343, 41.953, 109.504, $complexContainerWidth, $complexContainerHeight );
+  }
+  .hydrotreater4 {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(519.351, 128.962, 133.828, 41.953, $complexContainerWidth, $complexContainerHeight );
+  }
+  .atmospheric {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(227.549, 1.01, 68.282, 413.796, $complexContainerWidth, $complexContainerHeight );
+  }
+  .hydrotreater5 {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(618.04, 522.103, 117.477, 41.953, $complexContainerWidth, $complexContainerHeight );
+  }
+  .alkylation {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(528.078, 522.103, 110.569, 41.954, $complexContainerWidth, $complexContainerHeight );
+  }
+  .ffc {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(601.146, 434.336, 49.968, 108.038, $complexContainerWidth, $complexContainerHeight );
+  }
+  .fcc {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(628.131, 228.457, 123.448, 54.068, $complexContainerWidth, $complexContainerHeight );
+  }
+  .tank {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(704.528, 62.866, 70.542, 190.912, $complexContainerWidth, $complexContainerHeight );
+  }
+  .delayed {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(780.82, 309.952, 41.954, 121.965, $complexContainerWidth, $complexContainerHeight );
+  }
+  .asphalt {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(999.744, 173.629, 91.371, 40.726, $complexContainerWidth, $complexContainerHeight );
+  }
+  .hydrogen {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(1054.078, 430.152, 123.447, 54.068, $complexContainerWidth, $complexContainerHeight );
+  }
+  .sour {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(901.425, 749.924, 54.068, 125.449, $complexContainerWidth, $complexContainerHeight );
+  }
+  .storage {
+    //                                      top, left, width, height, container width, container height
+    @include revealPosition(183.34, 840.028, 60.524, 544.686, $complexContainerWidth, $complexContainerHeight );
+  }
+  .class {
+    //                                      top, left, width, height, container width, container height
+    //@include revealPosition(top, left, width, height, $complexContainerWidth, $complexContainerHeight );
+  }
+}
+.section-watch {
+  position: relative;
+  min-height: 410px !important;
+  @include transition(0.35s);
+  .container {
+    height: 100%;
+  }
+  a.btn-only-play,
+  .btn-only-play {
+    @include transition('width 0.5s ease-in-out 1s, height 0.5s ease-in-out 1s');
+    &.pause {
+      &:after {
+        content: none;
+      }
+      &:before {
+        content: '\f04c';
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        margin-top: -12px;
+        margin-right: -9px ;
+        font-family: FontAwesome;
+        font-size: 20px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #000;
+      }
+    }
+  }
+  &.video-active {
+    .container {
+      position: static;
+    }
+    .btn-only-play {
+      //position: absolute;
+      z-index: 10;
+      //left: 30px;
+      //bottom: 30px;
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
+
+.watch-bg-video-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: table;
+  width: 100%;
+  min-height: 200px;
+  height: 100%;
+  text-align: center;
+  background-color: #000000;
+}
+  .watch-bg-video {
+    display: table-cell;
+    min-height: 100px;
+    vertical-align: middle;
+    video {
+      margin: 0 auto;
+      display: block;
+      width: 100%;
+      height: 0;
+      //max-height: calc(100vh - 90px);
+      @include transition(0.35s);
+    }
+  }

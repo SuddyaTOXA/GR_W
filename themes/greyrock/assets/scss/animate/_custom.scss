@@ -1,0 +1,204 @@
+.invisible {
+  opacity: 0;
+}
+
+/*adding all elements that are animated to this section so there is no flicker*/
+.btn:not(.btn-download), .section-page-banner {
+  opacity: 0;
+}
+.btn {
+  animation-delay: 0.25s; -webkit-animation-delay: 0.25s;
+}
+
+/* @group homepage animation delay */
+
+  .watch-block-list > li,
+  .technology-list > li,
+  .tab-name-list > li,
+  .specifications-list > li {
+    @for $i from 1 through 10 {
+        &:nth-child(#{$i}) { 
+            animation-delay: $i * 0.075s; -webkit-animation-delay: $i * 0.075s;  
+            // .level-box .level-title, .level-box .content, .btn {
+            //   animation-delay: $i * 0.100s; -webkit-animation-delay: $i * 0.100s;
+            // }
+            // .level-img-wrap {
+            //   animation-delay: $i * 0.225s; -webkit-animation-delay: $i * 0.225s;
+            // }
+
+        }
+    }
+  }
+
+
+  /*@end*/
+
+  .level3-list > li {
+    @for $i from 1 through 4 {
+        &:nth-child(#{$i}) { 
+             animation-delay: $i * 0.075s; -webkit-animation-delay: $i * 0.075s;  
+           
+        }
+    }
+  }
+
+  
+
+ .info-box {
+  animation-delay: 0.100s; -webkit-animation-delay: 0.100s;
+ }
+  
+
+
+
+@-webkit-keyframes fadeInUpCustom {
+  from {
+    opacity: 0;
+   @include transform(translate3d(0, 50%, 0));
+
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUpCustom {
+  from {
+    opacity: 0;
+    @include transform(translate3d(0, 50%, 0));
+
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.fadeInUpCustom {
+  -webkit-animation-name: fadeInUpCustom;
+  animation-name: fadeInUpCustom;
+}
+
+@-webkit-keyframes fadeInUpSmall {
+  from {
+    opacity: 0;
+   @include transform(translate3d(0, 5%, 0));
+
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUpSmall {
+  from {
+    opacity: 0;
+    @include transform(translate3d(0, 5%, 0));
+
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.fadeInUpSmall {
+  -webkit-animation-name: fadeInUpSmall;
+  animation-name: fadeInUpSmall;
+}
+
+
+@-webkit-keyframes bounceInSmall {
+  from, 20%, 40%, 60%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(.98, .98, .98);
+    transform: scale3d(.98, .98, .98);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  80% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes bounceInSmall {
+  from, 20%, 40%, 60%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(.98, .98, .98);
+    transform: scale3d(.98, .98, .98);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  80% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.bounceInSmall {
+  -webkit-animation-name: bounceInSmall;
+  animation-name: bounceInSmall;
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+}
+
+ 

@@ -1,0 +1,34 @@
+@import 'global/variables';
+@import 'global/mixins';
+
+@import 'fonts/fonts';
+
+/*import animation styles*/
+@import 'animate/animate';
+@import 'animate/custom';
+
+/*import global styles */
+@import 'global/global';
+@import 'global/magnific';
+@import 'global/buttons';
+@import 'global/form';
+@import 'global/header';
+@import 'global/navigation';
+@import 'global/footer';
+
+/* styles used throughout site */
+@import 'partials/product-details';
+@import 'partials/faq';
+@import 'partials/systems';
+@import 'partials/category-page';
+@import 'partials/slideshow';
+@import 'partials/where-we-operate';
+@import 'partials/about';
+@import 'partials/news';
+@import 'partials/fuels';
+@import 'partials/contact';
+
+@import 'partials/homepage';
+
+/* media */
+@import 'global/media';
